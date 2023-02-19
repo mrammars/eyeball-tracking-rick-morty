@@ -6,33 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Look Morty</title>
     <style>
-      body {
-        background-color: #000;
-        color: #fff;
-        margin: 0;
-        padding: 0;
-      }
-      main {
-        display: grid;
-        place-items: center;
-        min-height: 100vh;
-        position: relative;
-      }
-      #eyes,
-      #eyes img {
-        position: absolute;
-      }
-      .eye-morty{
-        width:60px
-      }
-      .eye-rick{
-        width:70px
-      }
+        body {
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        main {
+            display: grid;
+            place-items: center;
+            min-height: 100vh;
+            position: relative;
+
+        }
+        #eyes,
+        #eyes img {
+            position: absolute;
+        }
+        .eye-morty{
+            width:60px
+        }
+        .eye-rick{
+            width:70px
+        }
+
+        @media all and (min-width: 480px) {
+            .deskContent {display:grid;}
+            .phoneContent {display:none;}
+        }
+        
+        @media all and (max-width: 479px) {
+            .deskContent {display:none;}
+            .phoneContent {
+                display:grid;
+                place-items: center;
+                min-height: 100vh;
+                position: relative;
+                color: #a8babe;
+                font-family: "Times New Roman", Times, serif;
+            }
+        }
     </style>
     <script src="./assets/app.js"></script>
   </head>
   <body>
-    <main>
+    <main class="deskContent">
       <img id="anchor" src="./assets/morty.png" />
       <div id="eyes">
         <img class="eye eye-morty" src="./assets/eye.png"style="top: 61px; bottom: 0px; left: -130px"/>
@@ -41,5 +59,8 @@
         <img class="eye eye-rick" src="./assets/eye.png" style="top: -105px;left: 99px" />
       </div>
     </main>
+    <div class="phoneContent">
+        Please use PC for better experience.
+    </div>
   </body>
 </html>
